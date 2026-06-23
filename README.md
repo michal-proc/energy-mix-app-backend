@@ -35,7 +35,7 @@ GET /api/v1/energy/optimal-charging-window?hours={number}&offsetDays={number?}
 
 ## Installation & Setup
 
-## Running with Docker
+### Running with Docker
 
 ```sh
 docker build -t energy-mix-app-backend .
