@@ -27,14 +27,6 @@ GET /api/v1/health
 GET /api/v1/energy/mix?offsetDays={number?}
 ```
 
-Optional query parameter:
-
-```http
-offsetDays=0
-```
-
-Returns averaged energy mix data for three consecutive days.
-
 ### Get Optimal Charging Window
 
 ```http
