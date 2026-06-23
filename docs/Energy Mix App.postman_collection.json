@@ -1,0 +1,80 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Energy Mix App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "APP_BASE_URL",
+      "value": "http://localhost:4000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{APP_BASE_URL}}/api/v1/health",
+          "host": ["{{APP_BASE_URL}}"],
+          "path": ["api", "v1", "health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Energy Mix",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{APP_BASE_URL}}/api/v1/energy/mix",
+          "host": ["{{APP_BASE_URL}}"],
+          "path": ["api", "v1", "energy", "mix"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Optimal Charging Window",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{APP_BASE_URL}}/api/v1/energy/optimal-charging-window?hours=3&offsetDays=0",
+          "host": ["{{APP_BASE_URL}}"],
+          "path": ["api", "v1", "energy", "optimal-charging-window"],
+          "query": [
+            {
+              "key": "hours",
+              "value": "3"
+            },
+            {
+              "key": "offsetDays",
+              "value": "0"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
