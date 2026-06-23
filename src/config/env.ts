@@ -4,14 +4,9 @@ import { z } from 'zod';
 config({ quiet: true });
 
 const envSchema = z.object({
-  CARBON_INTENSITY_API: z.string().url().default('https://api.carbonintensity.org.uk')
+  CARBON_INTENSITY_API: z.string().url()
 });
 
-const parsed = envSchema.safeParse(process.env);
+export const env = envSchema.parse(process.env);
 
-if (!parsed.success) {
-  console.error('Invalid environment configuration:', z.treeifyError(parsed.error));
-  throw new Error('Invalid environment configuration');
-}
-
-export const env = parsed.data;
+export type Env = typeof env;
